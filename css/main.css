@@ -1,0 +1,497 @@
+/* || RESET CSS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* || VARIABLES */
+:root {
+    --PRIMARYCOLOR: #0065fc;
+    --BACKGROUNDCOLOR: #f2f2f2;
+    --SHADOWCOLOR: #d9d9d9;
+}
+
+/****************************/
+/* || LAYOUT */
+body {
+    padding: 0 2.5rem; /*40px*/
+    max-width: 1440px; /*Body will stop growing with screen size*/
+    min-width: 320px;
+    margin-inline: auto; /*This will center body on the page*/
+}
+
+#hero {
+    padding-bottom: 1.875rem; /*30px*/
+}
+
+#heb {
+    width: 80%;
+}
+
+#pop {
+    min-width: 420px;
+    width: 20%;
+}
+ 
+#act {
+    padding: 2.5rem 0; /*40px*/
+}
+
+/****************************/
+/* || GENERAL STYLE */
+html {
+    font-size: 100%;
+    font-family: 'Raleway', sans-serif;
+}
+
+.background {
+    background-color: var(--BACKGROUNDCOLOR);
+    padding: 2.5rem; /*40px*/
+    border-radius: 1.25rem; /*20px*/
+}
+
+    /* Typography */
+.primary-font {
+    font-size: 1.375rem; /*22px*/
+    font-weight: 700;
+    padding-bottom: 0.5rem; /*8px*/
+}
+
+.secondary-font, .fa-solid, input {
+    font-size: 1.125rem; /*18px*/
+    font-weight: 700;
+    line-height: 2.5rem; /*40px*/
+}
+
+.card-title { 
+    font-size: 1rem; /*16px*/
+    font-weight: 700;
+}
+
+.card-text {
+    font-size: 0.875rem; /*14px*/
+    line-height: 1.875rem; /*30px*/
+}
+
+    /* Decorative */
+ul {
+    list-style-type: none;
+    line-height: 1.875rem; /*30px*/
+}
+
+figure {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 2px 2px 6px 1px var(--SHADOWCOLOR);
+    border: 4px solid white;
+}
+
+figure:hover {
+    box-shadow: 0 0 1px 1px var(--PRIMARYCOLOR);
+}
+
+img:not(#logo) {
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+}
+
+figcaption {
+    padding: 1rem;
+}
+
+.stars {
+    margin-top: auto;
+}
+
+.fa-star {
+    font-size: 0.75rem; /*12px*/
+    color: var(--PRIMARYCOLOR);
+    line-height: 1.25rem; /*20px*/
+}
+
+.no-star {
+    color: var(--SHADOWCOLOR);
+}
+
+    /* interactive */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+main a {
+    flex-grow: 1;
+    flex-basis: 30%; /*this and "min-width" on figure is required for boxes to grow evenly*/
+}
+
+.link:hover {
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+/****************************/
+/* || UTILITIES */
+.flex {
+    display: flex;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.int-seperate {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.875rem; /*30px*/
+}
+
+.ext-seperate {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 2.5rem; /*40px*/
+}
+
+.offscreen {
+    position: absolute;
+    left: -10000px;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.visible-on-small-devices {
+    display: none;
+}
+
+/****************************/
+/* || STRUCTURE */
+    /* Navigation */
+.menu a {
+    width: 150px;
+    height: 100px;
+    border: solid transparent;
+    border-width: 3px 0;
+}
+
+.menu a:hover {
+    border-top: solid var(--PRIMARYCOLOR);
+    font-weight: 500;
+}
+
+    /* Searchform */
+.searchform {
+    margin-top: 1.25rem; /*20px*/
+    width: fit-content;
+    border-radius: 15px;
+}
+
+.searchform:hover {
+    box-shadow: 0 0 1px 1px #0065fc;
+}
+    
+.searchform span {
+    height: 3.125rem; /*50px*/
+    background-color: var(--BACKGROUNDCOLOR);
+    padding: 0 1.25rem; /*20px*/
+    border-radius: 15px 0 0 15px;
+}
+    
+.searchform input {
+    border: 2px solid var(--BACKGROUNDCOLOR);
+    padding: 0 0.938rem; /*15px*/
+    outline: none;
+}
+    
+.searchform input::placeholder {
+    color: black;
+}
+    
+.searchform button {
+    background-color: var(--PRIMARYCOLOR);
+    padding: 0 1.25rem; /*20px*/
+    color: white;
+    border-radius: 0 15px 15px 0;
+    border: 0;
+    font-size: 1.125rem; /*18px*/
+}
+
+.searchform button:hover {
+    background-color: #277dff;
+    color: white;
+}
+
+    /* Filtres */
+#filtres {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+#filtres button {
+    background-color: white;
+    padding: 0 1.25rem 0 1rem; /*20px, 16px*/
+    color: black;
+    border-radius: 25px;
+    border: 2px solid var(--BACKGROUNDCOLOR);
+    font-size: 1.125rem; /*18px*/
+    font-weight: 700;
+}
+
+#filtres button:hover{
+    background-color: #deebff;
+}
+
+#filtres span {
+    color: var(--PRIMARYCOLOR);
+    padding-right: 0.5rem; /*8px*/
+}
+
+.info {
+    padding: 1.875rem 0; /*30px*/
+    gap: 15px;
+    align-items: center;
+}
+
+.info .fa-solid {
+    border: 2px solid var(--SHADOWCOLOR);
+    width: 24px;
+    height: 24px;
+    border-radius: 15px;
+    font-size: 0.6rem; /*8px*/
+    color: var(--PRIMARYCOLOR);
+}
+
+    /* Cards */
+.cards-container {
+    padding: 1.25rem 0; /*20px*/
+}
+
+#heb .cards-container {
+    flex-wrap: wrap;
+}
+
+    /* Cards figures */
+#heb figure {
+    min-width: 220px;
+}
+
+#act figure {
+    border: 0;
+}
+
+    /* Cards Images */
+#heb img {
+    height: 124px;
+}
+
+#pop img {
+    width: 140px;
+    height: auto;
+    border-radius: 20px 0 0 20px;
+}
+
+#act img {
+    height: 390px;
+}
+
+    /* Cards figcaptions */
+#pop figcaption {
+    min-height: 144px;
+}
+
+#act figcaption {
+    height: 56px;
+    display: flex;
+    align-items: center;
+}
+
+    /* Footer */
+footer {
+    background-color: var(--BACKGROUNDCOLOR);
+    padding: 2.5rem; /*40px*/
+    padding-right: 20%;
+}
+
+footer section {
+    width: 205px; /*Prevents the footer sections from glitching when hovering on a link*/
+}
+
+/****************************/
+/* || MEDIA QUERIES FOR LAPTOPS */
+@media screen and (max-width: 1364px) {
+/* || LAYOUT */
+    #heb-pop {
+        flex-direction: column;
+    }
+
+    #heb, #pop {
+        width: 100%;
+    }
+
+/* || STRUCTURE */
+    #pop .cards-container {
+        flex-direction: row;
+    }
+
+    #pop img {
+        width: 30%;
+        height: auto;
+    }
+
+    #act img {
+        height: 210px;
+    }
+  }
+
+/****************************/
+/* || MEDIA QUERIES */
+@media screen and (max-width: 998px) {
+/* || STRUCTURE */
+    #pop .cards-container {
+        flex-direction: column;
+    }
+
+    #pop img {
+        width: 140px;
+        height: auto;
+    }
+
+    /* Footer */
+    footer {
+        padding-right: 2.5rem; /*40px*/
+    }
+}
+
+/****************************/
+/* || MEDIA QUERIES FOR SMALL DEVICES */
+@media screen and (max-width: 768px) {
+/* || LAYOUT */
+    body {
+        padding: 0;
+    }
+
+    #hero {
+        padding: 1.875rem; /*30px*/
+    }
+
+    #heb-pop {
+        flex-direction: column-reverse;
+        gap: 0;
+    }
+
+    #pop {
+        min-width: unset;
+    }
+
+    #act {
+        padding: 1.875rem; /*30px*/
+        min-width: unset;
+    }
+
+/* || GENERAL STYLE */
+    .background {
+        padding: 1.875rem; /*30px*/
+        border-radius: 0;
+    }
+
+    #heb.background {
+        background-color: unset;
+    }
+
+/* || UTILITIES */
+
+    .visible-on-desktop {
+        display: none;
+    }
+
+    .visible-on-small-devices {
+        display: unset;
+    }
+
+/* || STRUCTURE */
+    /* Navigation */
+    header nav {
+        flex-direction: column;
+    }
+
+    #logo {
+        margin: 1.875rem 0; /*30px*/
+    }
+    
+    .menu, .menu li {
+        width: 100%;
+    }
+
+    .menu a {
+        height: 50px;
+        width: 100%;
+        border: solid var(--BACKGROUNDCOLOR);
+        border-width: 0 0 3px 0;
+    }
+
+    .menu a:hover {
+        border-top: solid transparent;
+        border-bottom: solid var(--PRIMARYCOLOR);
+        font-weight: 500;
+    }
+
+    /* Searchform */
+    .searchform input {
+        width: 80%;
+    }
+
+    /* Filters */
+    #filtres {
+    padding: 0 1.875rem; /*30px*/
+    }
+
+    #filtres button {
+        font-size: 0.77rem; /*12.3px*/
+        padding: 0 0.75rem;
+    }
+
+    .info {
+        padding: 1.875rem; /*30px*/
+
+    }
+
+    /* Cards */
+    #heb .cards-container, #act .cards-container {
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+
+    #act img {
+        height: 134px;
+    }
+
+    /* Footer */
+    footer nav {
+        display: flex;
+        flex-direction: column;
+    }
+  }
